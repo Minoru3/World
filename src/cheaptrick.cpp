@@ -91,7 +91,7 @@ static void SetParametersForGetWindowedWaveform(int half_window_length,
     base_index[i + half_window_length] = i;
   int origin = matlab_round(currnet_position * fs + 0.001);
   for (int i = 0; i <= half_window_length * 2; ++i)
-    safe_index[i] =
+    safe_index[i+1] =
       MyMinInt(x_length - 1, MyMaxInt(0, origin + base_index[i]));
 
   // Designing of the window function
